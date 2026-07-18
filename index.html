@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>We Are Getting Married</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div id="heart-field">
+    <div class="heart-layer" id="layerBack" data-depth="0.04"></div>
+    <div class="heart-layer" id="layerMid" data-depth="0.10"></div>
+    <div class="heart-layer" id="layerFront" data-depth="0.20"></div>
+  </div>
+
+  <div id="splash">
+    <div class="splash-eyebrow">You Are Cordially Invited</div>
+    <div class="splash-title">An Evening of Love<br>Awaits You</div>
+    <button class="enter-btn" id="enterBtn" type="button">
+      Enter Experience
+      <span class="corner-bl"></span>
+      <span class="corner-br"></span>
+    </button>
+    <div class="splash-sub">Tap to begin</div>
+  </div>
+
+  <div id="dots">
+    <div class="dot active" data-target="0"></div>
+    <div class="dot" data-target="1"></div>
+    <div class="dot" data-target="2"></div>
+    <div class="dot" data-target="3"></div>
+  </div>
+
+  <div id="scrollContainer">
+
+    <!-- SECTION 1 — WELCOME -->
+    <section class="section" id="sec0">
+      <div class="section-inner">
+        <div class="eyebrow reveal-el d0">Honored To Invite You</div>
+        <h1 class="welcome-heading">
+          <span class="word reveal-el d1">عقد قران</span>
+        </h1>
+        <div class="divider-sm reveal-el d3"></div>
+        <p class="welcome-sub reveal-el d3">
+          Two hearts, one journey.<br>
+          Join us as we begin our forever.
+        </p>
+      </div>
+      <div class="scroll-cue" id="scrollCue">
+        <span>Scroll</span>
+        <div class="chevron"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 — THE COUPLE -->
+    <section class="section" id="sec1">
+      <div class="section-inner">
+        <div class="eyebrow reveal-el d0">The Couple</div>
+        <div class="couple-name reveal-el d1">Khaled</div>
+        <div class="heart-wrap reveal-el d2">
+          <div class="pulse-heart"></div>
+        </div>
+        <div class="couple-name reveal-el d2">Soaad</div>
+        <div class="couple-sub reveal-el d3">Two souls, one love story</div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 — DATE & COUNTDOWN -->
+    <section class="section" id="sec2">
+      <div class="section-inner">
+        <div class="eyebrow reveal-el d0">Save The Date</div>
+        <div class="date-hero reveal-el d1">24</div>
+        <div class="date-month-year reveal-el d1">July &middot; 2026</div>
+        <div class="date-day-name reveal-el d2">Friday</div>
+
+        <div class="countdown reveal-el d3">
+          <div class="cd-seg">
+            <span class="cd-num" id="cdDays">00</span>
+            <span class="cd-label">Days</span>
+          </div>
+          <div class="cd-seg">
+            <span class="cd-num" id="cdHours">00</span>
+            <span class="cd-label">Hours</span>
+          </div>
+          <div class="cd-seg">
+            <span class="cd-num" id="cdMins">00</span>
+            <span class="cd-label">Mins</span>
+          </div>
+          <div class="cd-seg">
+            <span class="cd-num" id="cdSecs">00</span>
+            <span class="cd-label">Secs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4 — VENUE -->
+    <section class="section" id="sec3">
+      <div class="section-inner">
+        <div class="eyebrow reveal-el d0">The Venue</div>
+        <div class="venue-title reveal-el d1">El-Rayes ATA, Warraq Al Arab, Imbaba, Giza Governorate</div>
+        
+        <div class="map-link-wrapper reveal-el d2">
+          <a href="https://maps.app.goo.gl/LaoDezwR6ynArD1j7" target="_blank" rel="noopener" style="width: 100%;">
+            <div class="map-box">
+              <img src="https://i.postimg.cc/wBkLvKWh/Screenshot-2026-07-18-224624.png" alt="Venue Map">
+            </div>
+          </a>
+        </div>
+
+        <a class="directions-btn reveal-el d3"
+           href="https://maps.app.goo.gl/LaoDezwR6ynArD1j7"
+           target="_blank" rel="noopener">Get Directions</a>
+
+        <p class="venue-footer reveal-el d4">
+          Reception immediately to follow.<br>
+          We can't wait to celebrate with you.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
