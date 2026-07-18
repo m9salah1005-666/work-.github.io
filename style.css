@@ -1,0 +1,458 @@
+/* إعدادات عامة */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: radial-gradient(circle, #520b13 0%, #2a0307 100%); /* الخلفية الحمراء الملكي */
+    color: #f3e5d8; 
+    font-family: 'Playfair Display', 'Cairo', serif;
+    overflow-x: hidden;
+}
+
+/* تصميم الستارة والزر الدائري */
+.curtain-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.curtain-half {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('WhatsApp\ Image\ 2026-07-18\ at\ 2.23.14\ PM.jpeg'); /* حط هنا اسم صورتك اللي في المجلد */
+    background-size: 200% 100%; /* الخدعة اللي بتقسم الصورة نصين */
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
+    transition: transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.left-curtain { 
+    left: 0; 
+    background-position: left center;
+}
+
+.right-curtain { 
+    right: 0; 
+    background-position: right center;
+}
+
+/* تأثير فتح الستائر */
+.curtain-container.opened .left-curtain {
+    transform: translateX(-100%);
+}
+.curtain-container.opened .right-curtain {
+    transform: translateX(100%);
+}
+.curtain-container.opened .open-btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.5);
+}
+
+/* الزر الدائري المنتصف */
+.open-btn {
+    position: relative;
+    z-index: 1000;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #8b1322;
+    border: 3px dashed #d4af37; /* لمسة ذهبية */
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transition: all 0.5s ease;
+}
+
+.open-btn:hover {
+    transform: scale(1.1);
+    background-color: #a81c2d;
+}
+
+.open-btn .heart {
+    font-size: 24px;
+    color: #e2b25c;
+    margin-bottom: 5px;
+}
+
+.open-btn .btn-text {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1.5s ease-out;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ستايل الهيدر والتفاصيل */
+.hero-section {
+    padding: 100px 20px;
+}
+
+.couple-names {
+    font-size: 3.5rem;
+    font-style: italic;
+    color: #e2b25c; /* لون ذهبي ناعم */
+    margin-bottom: 10px;
+}
+
+.parents-names {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.date-text, .hotel-text {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.save-date-btn {
+    background: transparent;
+    border: 1px solid #e2b25c;
+    color: #e2b25c;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.save-date-btn:hover {
+    background: #e2b25c;
+    color: #1a0508;
+}
+
+/* العداد التنازلي */
+.countdown-section {
+    padding: 60px 0;
+    border-top: 1px solid rgba(226, 178, 92, 0.2);
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #e2b25c;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+display: flex;
+justify-content: center;
+}
+
+.timer-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.timer-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(226, 178, 92, 0.3);
+    padding: 20px 10px;
+    width: 20%;
+    border-radius: 8px;
+}
+
+.timer-box span {
+    font-size: 1.8rem;
+    display: block;
+    color: #fff;
+    font-weight: bold;
+}
+
+.timer-box p {
+    font-size: 0.75rem;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+/* الأسئلة الشائعة الأكورديون */
+.accordion {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(226, 178, 92, 0.2);
+}
+
+.accordion-header {
+    background: none;
+    border: none;
+    width: 100%;
+    color: #f3e5d8;
+    padding: 15px 10px;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 10px;
+}
+
+.accordion-content p {
+    padding-bottom: 15px;
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+/* تنسيقات صورة القاعة وتفاصيلها */
+.subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 25px;
+    font-style: italic;
+    display: flex;
+justify-content: center;
+}
+
+.hall-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(226, 178, 92, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.location-card {
+    margin-top: 20px;
+}
+
+.location-list {
+    list-style: none;
+    text-align: left;
+    max-width: 300px;
+    margin: 15px auto;
+}
+
+.location-list li {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: #f3e5d8;
+    opacity: 0.9;
+}
+
+/* تنسيقات الخريطة وزرار الفتح */
+.map-section {
+    margin: 50px 0;
+    padding-top: 40px;
+    border-top: 1px solid rgba(226, 178, 92, 0.2);
+}
+
+.map-container {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(226, 178, 92, 0.3);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.map-btn {
+    display: inline-block;
+    background: #e2b25c;
+    color: #1a0508;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.map-btn:hover {
+    background: #d4af37;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(226, 178, 92, 0.4);
+}
+
+/* تنسيقات برنامج اليوم (التايم لاين) */
+.program-section {
+    margin: 50px 0;
+    padding-top: 40px;
+    border-top: 1px solid rgba(226, 178, 92, 0.2);
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+    margin-top: 30px;
+    border-left: 2px solid rgba(226, 178, 92, 0.3);
+    text-align: left;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -46px; /* لضبط النجمة على الخط بالضبط */
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background: #1a0508;
+    border: 2px solid #e2b25c;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e2b25c;
+    font-size: 14px;
+}
+
+.timeline-content h4 {
+    color: #e2b25c;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.timeline-content .time {
+    font-weight: bold;
+    opacity: 0.9;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.timeline-content p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* مسافة للأسئلة الشائعة */
+.faq-section {
+    margin: 50px 0;
+    padding-top: 40px;
+    border-top: 1px solid rgba(226, 178, 92, 0.2);
+}
+/* تنسيق المربعات الخفيفة (Boxes) للأقسام */
+.location-card, .timeline, .accordion {
+    background: rgba(255, 255, 255, 0.03); /* الخلفية الشفافة الخفيفة جداً */
+    border: 1px solid rgba(226, 178, 92, 0.15); /* إطار ذهبي نحيف وهادي */
+    border-radius: 12px; /* حواف دائرية ناعمة */
+    padding: 25px 20px;
+    margin: 20px auto 0 auto;
+    max-width: 450px; /* لضبط عرض الـ Box في نص الشاشة للموبايل */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* ضل خفيف يبرز المربع */
+}
+
+/* تعديل بسيط للتايم لاين والأسئلة الشائعة عشان تظبط جوة الـ Box الجديد */
+.timeline {
+    text-align: left;
+    padding-left: 80px;
+}
+
+.accordion {
+    text-align: left;
+    padding: 10px 15px;
+}
+
+.accordion-item:last-child {
+    border-bottom: none; /* نشيل الخط الأخير عشان المظهر جوة الـ Box */
+}
+/* تنسيقات كارت الخريطة التفاعلي */
+.map-wrapper-link {
+    text-decoration: none; /* إلغاء أي خط تحت الكلام */
+    display: block;
+    max-width: 450px;
+    margin: 20px auto 0 auto;
+}
+
+.map-card-container {
+    position: relative;
+    border-radius: 12px 12px 0 0; /* دائرية من فوق بس عشان يمسك في الزرار اللي تحته */
+    overflow: hidden;
+    border: 1px solid rgba(226, 178, 92, 0.2);
+    border-bottom: none;
+    height: 200px;
+}
+
+.static-map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* الزرار الأبيض الصغير الطاير فوق الخريطة على الشمال */
+.inline-map-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #ffffff;
+    color: #333333;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+/* الزرار العريض الذهبي الملتصق بالخريطة من أسفل */
+.map-btn-wide {
+    background: #e2b25c;
+    color: #1a0508;
+    text-align: center;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    border-radius: 0 0 12px 12px; /* دائرية من تحت عشان تقفل الـ Box */
+    letter-spacing: 1px;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* تأثير اللمس أو المرور فوق الكارت بالكامل */
+.map-wrapper-link:hover .map-btn-wide {
+    background: #d4af37;
+}
+
+.map-wrapper-link:hover .static-map-image {
+    opacity: 0.95;
+}
